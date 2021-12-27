@@ -38,7 +38,7 @@ const Chat = () => {
       name:Name
     }
     //setMessages([...messages, message])
-    console.log(messages)
+    // console.log(messages)
     setMessage("")
     socket.emit("send message", messageObject)
   }
@@ -53,7 +53,10 @@ const Chat = () => {
       <div className={classes.Container}>
         
         {messages.map((message, index) => {
-          if (message.id === yourID) {
+          {/* if (message.id === yourID) */ }
+         
+          if (message.name===Name)
+          {
             return (
               <div className={classes.MyRow} key={index}>
               <div className={classes.myMessageContainer}>

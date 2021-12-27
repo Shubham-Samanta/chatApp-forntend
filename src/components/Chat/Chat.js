@@ -2,7 +2,7 @@ import React,{useState,useEffect} from 'react';
 import io from 'socket.io-client'
 import classes from "./Chat.module.css"
 import { useLocation } from "react-router-dom";
-const socket = io.connect("http://localhost:8000")
+const socket = io.connect("https://shubham-chatapp.herokuapp.com/")
 
 
 const Chat = () => {

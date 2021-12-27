@@ -13,12 +13,12 @@ const Chat = () => {
   const[Name, setName] = useState()
   let params = new URLSearchParams(useLocation().search);
   
-  useEffect(() => {
-    setRoom(params.get('room'))
-    setName(params.get('name'))
-  })
 
   useEffect(() => {
+
+    setRoom(params.get('room'))
+    setName(params.get('name'))
+
     socket.on("your id", (id) => {
       setYourID(id)
     })
@@ -37,8 +37,6 @@ const Chat = () => {
       id: yourID,
       name:Name
     }
-    //setMessages([...messages, message])
-    // console.log(messages)
     setMessage("")
     socket.emit("send message", messageObject)
   }
